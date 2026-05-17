@@ -1,0 +1,21 @@
+{
+  "name": "Demo PWA App",
+  "short_name": "DemoPWA",
+  "description": "My Next.js PWA App",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/icons/icon-248x248.png",
+      "sizes": "248x248",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
