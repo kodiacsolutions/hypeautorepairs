@@ -7,33 +7,90 @@
 
 /* 2. Define Variables for BOTH modes here */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0c; /* Default dark mode for luxury experience */
+  --foreground: #f5f5f7;
+  --primary: #ED5A12;
+  --brand-dark: #050507;
+  --brand-grey: #121216;
 }
 
-/* When next-themes adds the .dark class, override the variables */
+.light {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #ED5A12;
+  --brand-dark: #f5f5f7;
+  --brand-grey: #f9fafb;
+}
+
 .dark {
-  --background: #000000;
-  --foreground: #f9fafb;
+  --background: #0a0a0c;
+  --foreground: #f5f5f7;
+  --primary: #ED5A12;
+  --brand-dark: #050507;
+  --brand-grey: #121216;
 }
 
 /* 3. Tailwind v4 Theme Mapping */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  /* Add your brand color here so you can use 'text-primary' everywhere */
-  --color-primary: #ea580c; 
+  --color-primary: var(--primary);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-grey: var(--brand-grey);
 }
 
 /* 4. Apply to Body */
-body {
+html, body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  /* Ensure the body takes up full height for the footer trick */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #33333b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(18, 18, 22, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px border-white/5;
+}
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px border-black/5;
+}
+
+/* Lenis scroll settings */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis-stopped {
+  overflow: hidden;
+}
+.lenis-scrolling iframe {
+  pointer-events: none;
 }

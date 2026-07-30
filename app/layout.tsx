@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { ThemeProvider } from "./components/theme-provider";
+import LenisProvider from "./components/LenisProvider";
 import "./globals.css";
 
 export default function RootLayout({
@@ -17,16 +18,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* 1. Header stays at the top */}
-          <Header />
+          <LenisProvider>
+            {/* 1. Header stays at the top */}
+            <Header />
 
-          {/* 2. Main content expands to push footer down */}
-          <main className="flex-grow">
-            {children}
-          </main>
+            {/* 2. Main content expands to push footer down */}
+            <main className="flex-grow">
+              {children}
+            </main>
 
-          {/* 3. Footer stays at the bottom */}
-          <Footer />
+            {/* 3. Footer stays at the bottom */}
+            <Footer />
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>
