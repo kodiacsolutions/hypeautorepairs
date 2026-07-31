@@ -18,7 +18,7 @@ export default function Footer() {
   const quickLinks = [
     { name: "Our Services", href: "/services" },
     { name: "Before & After Gallery", href: "/gallery" },
-    { name: "Service Pricing", href: "/pricing" },
+    { name: "Service Packages", href: "/pricing" },
     { name: "About Workshop", href: "/about" },
     { name: "Book Consultation", href: "/contact" },
   ];

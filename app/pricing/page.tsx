@@ -38,12 +38,12 @@ export default function PricingPage() {
         
         {/* Header Block */}
         <div className="max-w-3xl mb-20 text-left">
-          <span className="text-xs font-bold text-primary uppercase tracking-widest">Service Rates</span>
+          <span className="text-xs font-bold text-primary uppercase tracking-widest">Service Packages</span>
           <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight mt-4 mb-6">
-            Transparent Pricing.
+            Service Packages.
           </h1>
           <p className="text-sm text-white/50 leading-relaxed font-light">
-            We provide upfront pricing rates for our certified workshop repairs, mechanical straightening, painting, and ceramic coating services.
+            We provide certified service packages for our workshop repairs, mechanical straightening, painting, and ceramic coating services.
           </p>
         </div>
 
@@ -77,9 +77,6 @@ export default function PricingPage() {
                           <h3 className="text-base font-bold uppercase tracking-wide text-white">
                             {plan.name}
                           </h3>
-                          <span className="text-2xl font-mono font-black text-primary shrink-0">
-                            {plan.price}
-                          </span>
                         </div>
                         
                         <p className="text-xs text-white/40 mb-6 font-light leading-relaxed">

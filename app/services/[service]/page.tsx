@@ -380,7 +380,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   <div key={pack.title} className="flex flex-col gap-3">
                     <div className="flex justify-between items-end">
                       <h4 className="text-xs font-bold uppercase tracking-wider text-white/80">{pack.title}</h4>
-                      <span className="text-sm font-mono font-bold text-primary">{pack.price}</span>
                     </div>
                     <ul className="grid gap-1.5 pl-4 border-l border-primary/20">
                       {pack.items.map((item) => (

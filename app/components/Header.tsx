@@ -26,7 +26,7 @@ export default function Header() {
   const navLinks = [
     { name: "Services", href: "/services", hasSubmenu: true },
     { name: "Gallery", href: "/gallery" },
-    { name: "Pricing", href: "/pricing" },
+    { name: "Packages", href: "/pricing" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
