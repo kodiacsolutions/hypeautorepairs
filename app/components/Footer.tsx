@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
-import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -44,33 +43,6 @@ export default function Footer() {
               comprehensive mechanical services for all makes and models.
             </p>
             <div className="flex gap-4">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full border border-white/5 bg-white/5 text-white/60 hover:text-white hover:border-primary transition-all duration-300"
-                aria-label="Instagram"
-              >
-                <FaInstagram className="h-4 w-4" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full border border-white/5 bg-white/5 text-white/60 hover:text-white hover:border-primary transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <FaFacebook className="h-4 w-4" />
-              </a>
-              <a
-                href="https://tiktok.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full border border-white/5 bg-white/5 text-white/60 hover:text-white hover:border-primary transition-all duration-300"
-                aria-label="TikTok"
-              >
-                <FaTiktok className="h-4 w-4" />
-              </a>
               <a
                 href="https://wa.me/61485878180"
                 target="_blank"
