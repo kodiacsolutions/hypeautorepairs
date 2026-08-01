@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { 
   Car, Wrench, ShieldCheck, CheckCircle2, Paintbrush, 
-  Sparkles, Clock, ShieldAlert, FileText, ArrowUpRight, 
+  Sparkles, Clock, ShieldAlert, ArrowUpRight, 
   Phone, MessageSquare, ChevronRight, Star, ChevronLeft, Award
 } from "lucide-react";
 
@@ -53,13 +53,6 @@ const SERVICES = [
     bg: "/service-4.png"
   },
   {
-    title: "Insurance Claims",
-    icon: FileText,
-    desc: "We coordinate audits, generate digital estimates, and handle paper filings with all top insurance firms.",
-    href: "/services/insurance-claims",
-    bg: "/service-5.png"
-  },
-  {
     title: "Ceramic Coating",
     icon: ShieldCheck,
     desc: "Nanotechnology quartz sealing layers providing 9H hydrophobic hardness and UV block filters.",
@@ -71,7 +64,7 @@ const SERVICES = [
 const REPAIR_PROCESS_STEPS = [
   { step: "01", name: "Inspection", desc: "Surgical inspection of structural chassis, alignment points, and electrical nodes." },
   { step: "02", name: "Assessment", desc: "Detailed breakdown of repair sequences, part requirements, and visual maps." },
-  { step: "03", name: "Insurance Filing", desc: "Direct coordinate filing with auditors to fast-track claim pre-approvals." },
+  { step: "03", name: "Parts Pre-order", desc: "Sourcing genuine OEM components and custom paint codes for your vehicle." },
   { step: "04", name: "Precision Repair", desc: "Heavy metal straightening, dent removal, panel fits, and electronic refits." },
   { step: "05", name: "Glasurit Painting", desc: "Multi-layered primer coating, base matching, clear sealing, and oven baking." },
   { step: "06", name: "Quality Audit", desc: "30-point diagnostics scan, paint scan, road checks, and safety clears." },
@@ -86,7 +79,7 @@ const TESTIMONIALS = [
     rating: 5,
   },
   {
-    quote: "Unbelievable service. They handled my insurance claim directly with the surveyor, got approval in 24 hours, and delivered the car flawlessly.",
+    quote: "Unbelievable service. They realigned my Audi's front bumper perfectly, matched the metallic paint flawlessly, and completed the work ahead of schedule.",
     author: "Elena Rostova",
     title: "Audi RS5 Coupe",
     rating: 5,
@@ -228,7 +221,7 @@ export default function HomePage() {
           </h1>
 
           <p className="max-w-xl text-sm sm:text-base text-white/50 leading-relaxed font-light">
-            Certified multi-stage paint correction, computerized panel reconstruction, and direct insurance filing. Completed to factory standards.
+            Certified multi-stage paint correction, computerized panel reconstruction, and bespoke color matching. Completed to factory standards.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md mt-4">
@@ -440,55 +433,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SECTION 6: INSURANCE CLAIMS TIMELINE ── */}
-      <section className="py-32 bg-brand-dark border-t border-white/5 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
-            <div className="lg:col-span-5 flex flex-col gap-8 text-left reveal-text">
-              <div>
-                <span className="text-xs font-bold text-primary uppercase tracking-widest">Hassle-Free Processing</span>
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-none uppercase mt-2">
-                  Insurance claims <br/>
-                  Made Simple.
-                </h2>
-                <p className="text-xs text-white/50 leading-relaxed font-light mt-4">
-                  We manage audits, prepare estimates, and coordinate claims directly with all major insurance carriers, specializing in rideshare vehicle recovery.
-                </p>
-              </div>
 
-              {/* Mini Vertical Timeline */}
-              <div className="flex flex-col gap-5 border-l border-white/10 pl-4 ml-1">
-                {[
-                  { title: "Insurer Inspection", desc: "Detailed camera documentation of structural and cosmetic compromises." },
-                  { title: "Estimate Drafting", desc: "Complete parts & labor outline built inside auditing software." },
-                  { title: "Claim Approval", desc: "Immediate claim review filing to trigger work clearances." },
-                  { title: "Final Handover", desc: "We bill your insurance carrier directly, saving you paperwork." },
-                ].map((item, idx) => (
-                  <div key={idx} className="relative flex gap-3 items-start group">
-                    <div className="absolute -left-[21px] top-1.5 h-2.5 w-2.5 rounded-full bg-primary border-2 border-brand-dark group-hover:scale-125 transition-transform" />
-                    <div>
-                      <h4 className="text-xs font-bold text-white uppercase tracking-wider">{item.title}</h4>
-                      <p className="text-[10px] text-white/40 leading-relaxed mt-0.5 font-light">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <div className="relative aspect-[16/11] w-full rounded-[32px] overflow-hidden border border-white/10 bg-[#121216] group">
-                <div 
-                  className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                  style={{ backgroundImage: `url("/rideshare-insurance.png")` }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* ── SECTION 7: TESTIMONIALS AUTOMATIC CAROUSEL ── */}
       <section className="py-32 bg-[#09090b] border-t border-white/5">
@@ -608,7 +553,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-xs sm:text-sm text-white/50 max-w-lg font-light leading-relaxed">
-            Get an instant computerized estimate, direct insurance support approvals, or speak directly with our diagnostics workshop engineers.
+            Get an instant computerized estimate, request custom-quoted services, or speak directly with our diagnostics workshop engineers.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md mt-4">

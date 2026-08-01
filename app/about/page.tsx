@@ -28,7 +28,7 @@ export default function AboutPage() {
               Founded in 2011, Hype Mechanical & Smash Repairs began with a singular focus: to elevate automotive body repair and detailing beyond simple utility fixes. We envisioned a clinical laboratory setup where mechanical repairs, high-solid paint matching, and ceramic coatings are executed like fine craftsmanship.
             </p>
             <p className="text-sm text-white/50 leading-relaxed font-light">
-              Over the last decade, we have repaired over 5,000 sports cars, luxury crossovers, and daily drivers, earning the trust of top auto insurance carriers and private collectors.
+              Over the last decade, we have repaired over 5,000 sports cars, luxury crossovers, and daily drivers, earning the trust of private collectors and automotive enthusiasts.
             </p>
           </div>
 

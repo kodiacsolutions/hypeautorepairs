@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
     {
       num: "03",
       title: "How We Use Your Information",
-      content: "Your information is used to schedule appointments, respond to inquiries, provide repair quotations, deliver requested services, process insurance assistance claims, improve our website and services, send service updates/reminders, and respond to customer support requests. We do not sell your personal information."
+      content: "Your information is used to schedule appointments, respond to inquiries, provide repair quotations, deliver requested services, improve our website and services, send service updates/reminders, and respond to customer support requests. We do not sell your personal information."
     },
     {
       num: "04",
@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
     {
       num: "05",
       title: "Information Sharing",
-      content: "We may share information only when necessary with: Insurance providers (for claim audits), Vehicle parts suppliers (to order components), Payment processors (to secure transactions), Legal authorities (when required by law), and Service providers assisting in business operations. We never sell customer information to third parties."
+      content: "We may share information only when necessary with: Vehicle parts suppliers (to order components), Payment processors (to secure transactions), Legal authorities (when required by law), and Service providers assisting in business operations. We never sell customer information to third parties."
     },
     {
       num: "06",

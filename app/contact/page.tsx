@@ -64,7 +64,7 @@ export default function ContactPage() {
             Book Restoration.
           </h1>
           <p className="text-sm text-white/50 leading-relaxed font-light">
-            Have questions about repair timelines, insurance coordination, or package rates? Leave a message below or call our diagnostics engineers.
+            Have questions about repair timelines or package rates? Leave a message below or call our diagnostics engineers.
           </p>
         </div>
 
@@ -153,7 +153,6 @@ export default function ContactPage() {
                     <option value="car-painting">Car Painting & Oven Bake</option>
                     <option value="denting">Denting & Panel Alignment</option>
                     <option value="accident-repair">Accident Restoration</option>
-                    <option value="insurance-claims">Insurance Claims Support</option>
                     <option value="ceramic-coating">Ceramic Coating</option>
                     <option value="car-washing">Foam Washing</option>
                   </select>

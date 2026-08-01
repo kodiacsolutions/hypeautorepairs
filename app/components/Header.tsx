@@ -37,7 +37,6 @@ export default function Header() {
     { name: "Denting", href: "/services/denting" },
     { name: "Ceramic Coating", href: "/services/ceramic-coating" },
     { name: "Car Detailing", href: "/services/car-detailing" },
-    { name: "Insurance Claims", href: "/services/insurance-claims" },
     { name: "Car Wash & Clean", href: "/services/car-washing" },
   ];
 

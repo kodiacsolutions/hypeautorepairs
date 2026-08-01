@@ -13,7 +13,7 @@ export default function TermsPage() {
     {
       num: "02",
       title: "Services",
-      content: "We provide automotive services including but not limited to: Accident repairs, Vehicle restoration, Car detailing, Denting & painting, Insurance claim assistance, Mechanical repairs, Vehicle inspection, and General automotive maintenance. All services are subject to availability and physical inspection of the vehicle at our workshop."
+      content: "We provide automotive services including but not limited to: Accident repairs, Vehicle restoration, Car detailing, Denting & painting, Mechanical repairs, Vehicle inspection, and General automotive maintenance. All services are subject to availability and physical inspection of the vehicle at our workshop."
     },
     {
       num: "03",
@@ -32,41 +32,36 @@ export default function TermsPage() {
     },
     {
       num: "06",
-      title: "Insurance Claims",
-      content: "Where applicable, we may assist customers with insurance claim documentation and coordinator audits. However, approval of insurance claims remains solely at the discretion of the insurance provider. We cannot guarantee claim approval, processing timelines, coverage amounts, or policy eligibility."
-    },
-    {
-      num: "07",
       title: "Payment",
       content: "Payment must be completed in full before the release of the vehicle unless otherwise agreed in writing. Accepted payment methods include Cash, Credit/Debit Cards, Bank Transfer, and approved digital payment gateways. Late payments may incur storage or administration fees where permitted by law."
     },
     {
-      num: "08",
+      num: "07",
       title: "Warranty",
       content: "Where applicable, workmanship warranties are provided for eligible collision and paint services. Warranty does not cover normal wear and tear, customer misuse, accidents after repair, unauthorized repairs performed elsewhere, or damage caused by external factors. Manufacturer warranties on replacement parts remain subject to the respective manufacturer's terms."
     },
     {
-      num: "09",
+      num: "08",
       title: "Website Content",
       content: "All content including images, logos, graphics, videos, text, and service descriptions are the property of Hype Mechanical & Smash Repairs unless otherwise stated. Unauthorized copying, reproduction, or distribution of this content is strictly prohibited."
     },
     {
-      num: "10",
+      num: "09",
       title: "Limitation of Liability",
       content: "While we strive to provide accurate information, we do not guarantee that the website is free from errors or omissions. To the maximum extent permitted by law, we shall not be liable for indirect damages, loss of profits, data loss, vehicle downtime, or third-party service delays."
     },
     {
-      num: "11",
+      num: "10",
       title: "Third-Party Links",
       content: "Our website may contain links to external websites for customer convenience. We are not responsible for the content, policies, or practices of third-party websites."
     },
     {
-      num: "12",
+      num: "11",
       title: "Changes to Terms",
       content: "We reserve the right to update these Terms & Conditions at any time without prior notice. Continued use of the website constitutes acceptance of the updated terms."
     },
     {
-      num: "13",
+      num: "12",
       title: "Governing Law",
       content: "These Terms & Conditions shall be governed by and construed in accordance with the laws of New South Wales, Australia, where our business operates."
     }

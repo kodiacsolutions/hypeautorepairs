@@ -10,7 +10,6 @@ export default function Footer() {
     { name: "Car Painting", href: "/services/car-painting" },
     { name: "Denting & Bodywork", href: "/services/denting" },
     { name: "Accident Repair", href: "/services/accident-repair" },
-    { name: "Insurance Claims", href: "/services/insurance-claims" },
     { name: "Ceramic Coating", href: "/services/ceramic-coating" },
   ];
 

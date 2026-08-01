@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Sparkles, Paintbrush, Wrench, ShieldAlert, FileText, ShieldCheck, RefreshCw, Heart, Shield, CheckCircle2, HelpCircle, Phone, ArrowRight, ChevronRight, MessageSquare } from "lucide-react";
+import { Sparkles, Paintbrush, Wrench, ShieldAlert, ShieldCheck, RefreshCw, Heart, Shield, CheckCircle2, HelpCircle, Phone, ArrowRight, ChevronRight, MessageSquare } from "lucide-react";
 
 // 1. Static parameter list for static compilation exports
 export async function generateStaticParams() {
@@ -9,7 +9,6 @@ export async function generateStaticParams() {
     { service: "car-painting" },
     { service: "denting" },
     { service: "accident-repair" },
-    { service: "insurance-claims" },
     { service: "car-polishing" },
     { service: "ceramic-coating" },
     { service: "interior-cleaning" },
@@ -126,33 +125,7 @@ const SERVICES_CATALOG: Record<string, ServiceData> = {
       { title: "Elite Frame Rebuild", price: "$3,499", items: ["Chassis jig realignment", "Suspension refits", "Airbag diagnostics reset"] }
     ],
     faqs: [
-      { q: "Will the car drive straight after frame repair?", a: "Yes, we verify wheel track alignment on laser rigs to guarantee factory driving handling specs." },
-      { q: "Do you coordinate with insurance surveyors?", a: "Yes, we handle the entire surveyor inspect process from start to finish." }
-    ]
-  },
-  "insurance-claims": {
-    title: "Insurance Claims Coordination",
-    icon: FileText,
-    subtitle: "Direct Filing Coordination with Cashless Approvals",
-    desc: "Paperwork filing, photo reports, surveyor coordination, and direct insurance billing support.",
-    overview: "We eliminate the stress of accident paperwork. We schedule claims surveyors to inspect the vehicle at our workshop, prepare digital estimation forms, submit claim pictures, and bill carriers directly.",
-    benefits: [
-      "Saves you hours of phone calls and paperwork.",
-      "Secures repair clearance approvals within 24-48 hours.",
-      "Integrates direct cashless settlement pathways."
-    ],
-    stages: [
-      { name: "Claim Setup", desc: "Gathering driver license copies, policy notes, and accident reports." },
-      { name: "Surveyor Audit", desc: "Hosting insurance inspectors to audit damage points at our workshop." },
-      { name: "Cashless Handover", desc: "Direct billing to the carrier, saving you out-of-pocket costs." }
-    ],
-    pricing: [
-      { title: "Standard Filing", price: "Free", items: ["Filing claim forms", "Uploading photos", "Hosting surveyor check"] },
-      { title: "Cashless Priority File", price: "Free", items: ["Direct corporate billing", "Fast-track parts pre-orders", "No paperwork"] }
-    ],
-    faqs: [
-      { q: "Which insurance companies do you work with?", a: "We work with all major national and private car insurance providers." },
-      { q: "Do I have to pay anything out of pocket?", a: "Only the policy deductible and any depreciation elements dictated by your insurance policy structure." }
+      { q: "Will the car drive straight after frame repair?", a: "Yes, we verify wheel track alignment on laser rigs to guarantee factory driving handling specs." }
     ]
   },
   "ceramic-coating": {

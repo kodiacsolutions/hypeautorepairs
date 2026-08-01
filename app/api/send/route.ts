@@ -8,13 +8,11 @@ export async function POST(request: Request) {
   try {
     const { name, email, phone, carModel, service, message } = await request.json();
 
-    // Map service slugs to human-readable names
     const serviceMap: Record<string, string> = {
       "car-detailing": "Car Detailing & Compounding",
       "car-painting": "Car Painting & Oven Bake",
       "denting": "Denting & Panel Alignment",
       "accident-repair": "Accident Restoration",
-      "insurance-claims": "Insurance Claims Support",
       "ceramic-coating": "Ceramic Coating",
       "car-washing": "Foam Washing",
     };

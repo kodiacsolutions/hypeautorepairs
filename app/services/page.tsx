@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Sparkles, Paintbrush, Wrench, ShieldAlert, FileText, ShieldCheck, Heart, Shield, RefreshCw, ArrowRight } from "lucide-react";
+import { Sparkles, Paintbrush, Wrench, ShieldAlert, ShieldCheck, Heart, Shield, RefreshCw, ArrowRight } from "lucide-react";
 
 const ALL_SERVICES = [
   {
@@ -32,13 +32,6 @@ const ALL_SERVICES = [
     icon: ShieldAlert,
     desc: "End-to-end crash repair, chassis straightening, frame balancing, electrical systems calibration, and cosmetic restoration.",
     features: ["Frame Re-alignment", "Electronics Calibration", "Major Part Refit"],
-  },
-  {
-    slug: "insurance-claims",
-    title: "Insurance Claim Assistance",
-    icon: FileText,
-    desc: "Hassle-free paperwork routing. We host insurance audits, draft claims, take claim photographs, and secure fast repair clearances.",
-    features: ["Surveyor Coordination", "Digital Estimation", "Cashless Approvals"],
   },
   {
     slug: "ceramic-coating",
