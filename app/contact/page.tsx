@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ShieldCheck, ChevronRight } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     carModel: "",
-    service: "car-detailing",
+    service: "car-painting",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -40,7 +40,7 @@ export default function ContactPage() {
           email: "",
           phone: "",
           carModel: "",
-          service: "car-detailing",
+          service: "car-painting",
           message: "",
         });
       } else {
@@ -149,12 +149,16 @@ export default function ContactPage() {
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="rounded-xl border border-white/10 bg-black px-4 py-3.5 text-xs text-white focus:border-primary outline-none"
                   >
-                    <option value="car-detailing">Car Detailing & Compounding</option>
-                    <option value="car-painting">Car Painting & Oven Bake</option>
+                    <option value="car-painting">Car Painting</option>
                     <option value="denting">Denting & Panel Alignment</option>
                     <option value="accident-repair">Accident Restoration</option>
-                    <option value="ceramic-coating">Ceramic Coating</option>
-                    <option value="car-washing">Foam Washing</option>
+                    <option value="insurance-claims">Insurance Claims Support</option>
+                    <option value="part-replacement">Part Replacement</option>
+                    <option value="fault-diagnosing">Fault Diagnosing</option>
+                    <option value="tyre-replacement">Tyre Replacement</option>
+                    <option value="logbook-service">Logbook Service</option>
+                    <option value="oil-change">Basic Oil Change</option>
+                    <option value="aircon-regas">Aircon Regas</option>
                   </select>
                 </div>
 

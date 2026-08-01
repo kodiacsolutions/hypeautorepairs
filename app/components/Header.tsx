@@ -32,12 +32,16 @@ export default function Header() {
   ];
 
   const subServices = [
-    { name: "Accident Repair", href: "/services/accident-repair" },
     { name: "Car Painting", href: "/services/car-painting" },
-    { name: "Denting", href: "/services/denting" },
-    { name: "Ceramic Coating", href: "/services/ceramic-coating" },
-    { name: "Car Detailing", href: "/services/car-detailing" },
-    { name: "Car Wash & Clean", href: "/services/car-washing" },
+    { name: "Denting & Panel Alignment", href: "/services/denting" },
+    { name: "Accident Restoration", href: "/services/accident-repair" },
+    { name: "Insurance Claims", href: "/services/insurance-claims" },
+    { name: "Part Replacement", href: "/services/part-replacement" },
+    { name: "Fault Diagnosing", href: "/services/fault-diagnosing" },
+    { name: "Tyre Replacement", href: "/services/tyre-replacement" },
+    { name: "Logbook Service", href: "/services/logbook-service" },
+    { name: "Basic Oil Change", href: "/services/oil-change" },
+    { name: "Aircon Regas", href: "/services/aircon-regas" },
   ];
 
   return (

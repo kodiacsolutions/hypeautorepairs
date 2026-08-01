@@ -1,18 +1,24 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Sparkles, Paintbrush, Wrench, ShieldAlert, ShieldCheck, RefreshCw, Heart, Shield, CheckCircle2, HelpCircle, Phone, ArrowRight, ChevronRight, MessageSquare } from "lucide-react";
+import { 
+  Paintbrush, Wrench, ShieldAlert, FileText, 
+  Settings, Cpu, Disc, BookOpen, Droplet, Wind,
+  CheckCircle2, ChevronRight, Phone, HelpCircle
+} from "lucide-react";
 
 // 1. Static parameter list for static compilation exports
 export async function generateStaticParams() {
   return [
-    { service: "car-detailing" },
     { service: "car-painting" },
     { service: "denting" },
     { service: "accident-repair" },
-    { service: "car-polishing" },
-    { service: "ceramic-coating" },
-    { service: "interior-cleaning" },
-    { service: "car-washing" },
+    { service: "insurance-claims" },
+    { service: "part-replacement" },
+    { service: "fault-diagnosing" },
+    { service: "tyre-replacement" },
+    { service: "logbook-service" },
+    { service: "oil-change" },
+    { service: "aircon-regas" },
   ];
 }
 
@@ -29,31 +35,6 @@ interface ServiceData {
 }
 
 const SERVICES_CATALOG: Record<string, ServiceData> = {
-  "car-detailing": {
-    title: "Car Detailing",
-    subtitle: "Luxury Paint Rejuvenation & Deep Cabin Cleanse",
-    icon: Sparkles,
-    desc: "Multi-stage paint correction, leather hide conditioning, and micro-debris cabin extraction.",
-    overview: "Our signature car detailing is a thorough correction process designed to clean, restore, and shield all surfaces of your vehicle. We remove 90%+ of paint swirls, polish the clear coat to a mirror finish, and sanitize the cabin space.",
-    benefits: [
-      "Eliminates 90%+ of clear coat swirl marks and light scratches.",
-      "Rejuvenates dry leather seats and door trims.",
-      "Enhances vehicle resale valuation and aesthetic appeal."
-    ],
-    stages: [
-      { name: "Decontamination Wash", desc: "Chemical clay bar scrub to dissolve surface iron particles." },
-      { name: "Paint Swirl Correction", desc: "Rotary compounding and dual-action micro-polishing." },
-      { name: "Leather & Trim Nourishment", desc: "pH-neutral conditioning cream applied to leather fibers." }
-    ],
-    pricing: [
-      { title: "Essential Detail", price: "$299", items: ["1-Stage Polish", "Leather cleaning", "Engine bay wash"] },
-      { title: "Hype Premium Detail", price: "$599", items: ["3-Stage Compound Polish", "Deep steam sanitizing", "1-Year ceramic glaze"] }
-    ],
-    faqs: [
-      { q: "How long does a detailing treatment take?", a: "A complete multi-stage correction takes between 6 to 12 hours depending on vehicle paint condition." },
-      { q: "Will detailing remove deep key scratches?", a: "Detailing removes clear coat scratches. If a scratch has breached the paint layer down to the primer, touch-up painting is required." }
-    ]
-  },
   "car-painting": {
     title: "Car Painting",
     subtitle: "Oven-Baked Downdraft Premium Painting",
@@ -71,8 +52,8 @@ const SERVICES_CATALOG: Record<string, ServiceData> = {
       { name: "Glasurit Base & Baking", desc: "Multi-layered spraying followed by oven baking cycles." }
     ],
     pricing: [
-      { title: "Single Panel Coat", price: "$249", items: ["Panel sanding", "Base coat match", "UV clear coat"] },
-      { title: "Full Vehicle Bake", price: "$2,499", items: ["Complete body prep", "Chassis mask", "5-Year paint warranty"] }
+      { title: "Single Panel Coat", price: "Custom Quote", items: ["Panel sanding", "Base coat match", "UV clear coat"] },
+      { title: "Full Vehicle Bake", price: "Custom Quote", items: ["Complete body prep", "Chassis mask", "5-Year paint warranty"] }
     ],
     faqs: [
       { q: "Do you offer custom colors?", a: "Yes, we paint custom satin, matte, and metallic pigments besides factory-matching colors." },
@@ -80,7 +61,7 @@ const SERVICES_CATALOG: Record<string, ServiceData> = {
     ]
   },
   "denting": {
-    title: "Denting & Panel realignments",
+    title: "Denting & Panel Alignment",
     icon: Wrench,
     subtitle: "Chassis Alignment & Metal Straightening",
     desc: "Panel dent pulling, structural balance realignment, and precise factory panel gap repairs.",
@@ -96,8 +77,8 @@ const SERVICES_CATALOG: Record<string, ServiceData> = {
       { name: "Surface Glazing", desc: "Thin micro-filler application to level sheet surfaces before paint prep." }
     ],
     pricing: [
-      { title: "Crease Dent Repair", price: "$149", items: ["Dent pulling", "Surface level scan", "Paint prep match"] },
-      { title: "Multiple Panel realign", price: "$499", items: ["Chassis frame check", "Door hinge pin refits", "Gap leveling check"] }
+      { title: "Crease Dent Repair", price: "Custom Quote", items: ["Dent pulling", "Surface level scan", "Paint prep match"] },
+      { title: "Multiple Panel realign", price: "Custom Quote", items: ["Chassis frame check", "Door hinge pin refits", "Gap leveling check"] }
     ],
     faqs: [
       { q: "Can you fix aluminum panels?", a: "Yes, we use specialized aluminum dent welding tools to straighten lightweight aluminum frames." },
@@ -121,111 +102,180 @@ const SERVICES_CATALOG: Record<string, ServiceData> = {
       { name: "Diagnostics Re-code", desc: "Clearing crash sensors, re-coding control blocks, and sensor checking." }
     ],
     pricing: [
-      { title: "Standard Dent & Re-fit", price: "$899", items: ["Crash bar refit", "Panel painting", "Sensors check"] },
-      { title: "Elite Frame Rebuild", price: "$3,499", items: ["Chassis jig realignment", "Suspension refits", "Airbag diagnostics reset"] }
+      { title: "Standard Dent & Re-fit", price: "Custom Quote", items: ["Crash bar refit", "Panel painting", "Sensors check"] },
+      { title: "Elite Frame Rebuild", price: "Custom Quote", items: ["Chassis jig realignment", "Suspension refits", "Airbag diagnostics reset"] }
     ],
     faqs: [
       { q: "Will the car drive straight after frame repair?", a: "Yes, we verify wheel track alignment on laser rigs to guarantee factory driving handling specs." }
     ]
   },
-  "ceramic-coating": {
-    title: "Ceramic Coating",
-    icon: ShieldCheck,
-    subtitle: "9H Quartz Hardness Nanotechnology Shields",
-    desc: "Deep gloss nanotech sealants shielding panels from UV rays, acid rain, and swirls.",
-    overview: "We apply multi-layered liquid quartz ceramic coatings that bond to your vehicle's factory clear coat. This creates a hard, glass-like barrier that repels water, prevents chemical stains, and provides high gloss.",
+  "insurance-claims": {
+    title: "Insurance Claims Assistance",
+    icon: FileText,
+    subtitle: "Direct Filing Coordination with Cashless Approvals",
+    desc: "Paperwork filing, photo reports, surveyor coordination, and direct insurance billing support.",
+    overview: "We coordinate with insurance surveyors to inspect the vehicle at our workshop, prepare digital estimation forms, submit claim pictures, and handle direct billing.",
     benefits: [
-      "9H pencil hardness scratch resistance.",
-      "Hydrophobic rain repellant surface.",
-      "Reduces dust buildup and makes washing easy."
+      "Saves you hours of phone calls and paperwork.",
+      "Secures repair clearance approvals within 24-48 hours.",
+      "Integrates direct cashless settlement pathways."
     ],
     stages: [
-      { name: "Paint Prep Polish", desc: "Removing surface scratches before sealing them under coating." },
-      { name: "Base Liquid Seal", desc: "Applying liquid nano-quartz drops across panels." },
-      { name: "UV Baking Lamp", desc: "Infrared curing lamps to hard-bake coating layers." }
+      { name: "Claim Setup", desc: "Gathering driver license copies, policy notes, and accident reports." },
+      { name: "Surveyor Audit", desc: "Hosting insurance inspectors to audit damage points at our workshop." },
+      { name: "Billing Handover", desc: "Direct billing to the carrier, saving you out-of-pocket costs." }
     ],
     pricing: [
-      { title: "3-Year Shield", price: "$499", items: ["1 Paint Correction pass", "Base coating layer", "Wheels face coat"] },
-      { title: "Elite 5-Year Shield", price: "$899", items: ["2 Paint Correction passes", "2 Coating layers", "Glass & Interior seals"] }
+      { title: "Standard Filing", price: "Free", items: ["Filing claim forms", "Uploading photos", "Hosting surveyor check"] },
+      { title: "Cashless Priority File", price: "Free", items: ["Direct corporate billing", "Fast-track parts pre-orders", "No paperwork"] }
     ],
     faqs: [
-      { q: "Can I wash my car after coating?", a: "Avoid washing for 7 days while the ceramic coating fully cures to maximum hardness." },
-      { q: "Does this replace wax?", a: "Yes, ceramic coating replaces wax and lasts years instead of weeks." }
+      { q: "Which insurance companies do you work with?", a: "We work with all major national and private car insurance providers." },
+      { q: "Do I have to pay anything out of pocket?", a: "Only the policy deductible and any depreciation elements dictated by your insurance policy structure." }
     ]
   },
-  "car-polishing": {
-    title: "Car Polishing & Glazing",
-    icon: RefreshCw,
-    subtitle: "High-Reflective Paint Swirl Removal",
-    desc: "Micro-swirl paint buffing and high-gloss glazes to restore depth and mirror finishes.",
-    overview: "We remove hazing, micro-swirls, and oxidation layers from the vehicle's paint surface. Our polishing compound creates a smooth clear coat that reflects light evenly.",
+  "part-replacement": {
+    title: "Part Replacement",
+    icon: Settings,
+    subtitle: "Premium OEM & Certified Parts Replacement",
+    desc: "Replacing worn or damaged components with high-quality OEM or certified parts.",
+    overview: "We diagnose and replace faulty parts including suspension components, brake rotors, belts, hoses, and filters. All parts are sourced from premium suppliers to maintain warranty.",
     benefits: [
-      "Restores dark paint colors to deep reflections.",
-      "Removes oxidation haze and weather fading.",
-      "Provides water spot removal."
+      "Maintains vehicle manufacturer warranty.",
+      "Ensures optimal safety and performance.",
+      "All replacements come with parts and labor warranty."
     ],
     stages: [
-      { name: "Surface Prep Wash", desc: "Deep wash followed by clay bar prep to lift embedded dust." },
-      { name: "Buffer Compounding", desc: "Buffing paint layers to level out micro-creases." },
-      { name: "Wax Glaze Seal", desc: "Applying protective gloss sealant to locks depth reflections." }
+      { name: "Diagnostic Check", desc: "Testing components to locate wear and tear points." },
+      { name: "OEM Sourcing", desc: "Sourcing certified parts matching your vehicle spec." },
+      { name: "Installation", desc: "Precise installation and torque calibration to factory specs." }
     ],
     pricing: [
-      { title: "Standard Buff Polish", price: "$199", items: ["1-Stage polish buff", "Sanding spots check", "Wax glaze sealing"] },
-      { title: "Deep Gloss Rejuvenate", price: "$349", items: ["2-Stage polish correction", "Water spot lift", "Synthetic wax layer"] }
+      { title: "Basic Wear Replacements", price: "Custom Quote", items: ["Brake pad swap", "Belt adjustments", "Filter change"] },
+      { title: "Major Assembly Swap", price: "Custom Quote", items: ["Suspension struts", "Alternator replace", "Radiator replacement"] }
     ],
     faqs: [
-      { q: "Will polishing thin my paint?", a: "No, we use digital paint depth gauges to ensure we only remove microns of the clear coat, preserving paint life." },
-      { q: "How often should I polish my car?", a: "Once or twice a year is sufficient to keep paint looking showroom fresh." }
+      { q: "Do you use genuine parts?", a: "Yes, we prioritize genuine OEM parts or certified premium aftermarket equivalents." }
     ]
   },
-  "interior-cleaning": {
-    title: "Interior Detailing",
-    icon: Heart,
-    subtitle: "Deep Steam Extraction & Leather Reconditioning",
-    desc: "Upholstery steam cleaning, stain extraction, AC vent sanitation, and leather nourishment.",
-    overview: "We restore vehicle interiors to pristine condition. We steam extract floor carpets, deep clean dashboard plastics, remove stubborn seat stains, condition leather surfaces, and disinfect HVAC vents.",
+  "fault-diagnosing": {
+    title: "Fault Diagnosing",
+    icon: Cpu,
+    subtitle: "Advanced Computerized Diagnostics Scan",
+    desc: "Complete vehicle diagnostics scanning, warning light checks, and sensor testing.",
+    overview: "Our advanced scan tools read diagnostic trouble codes from your vehicle's engine control unit (ECU). We troubleshoot check engine lights, transmission errors, ABS faults, and sensor failures.",
     benefits: [
-      "Stops mold, bacteria, and dust allergens.",
-      "Restores leather hides back to original soft textures.",
-      "Neutralizes food and tobacco odors."
+      "Locates electrical and mechanical issues instantly.",
+      "Prevents minor faults from turning into costly repairs.",
+      "Ensures all safety systems are fully calibrated."
     ],
     stages: [
-      { name: "Cabin Vacuum & Blowout", desc: "High-pressure air lines to clear dust from console gaps." },
-      { name: "Steam Extraction", desc: "Steam injecting carpets to pull out embedded oils." },
-      { name: "Leather Nourishment", desc: "Conditioning creams containing UV blocking filters." }
+      { name: "ECU Scan", desc: "Connecting diagnostic tools to read error code history." },
+      { name: "Live Data Feed", desc: "Checking sensor output readings during active engine cycles." },
+      { name: "Fault Analysis", desc: "Isolating faulty relays, sensors, or mechanical wear points." }
     ],
     pricing: [
-      { title: "Cabin Refresh", price: "$149", items: ["Carpet wash", "Plastic detailing wipe", "AC vent ozone wash"] },
-      { title: "Premium Deep Extraction", price: "$299", items: ["Full carpet steam clean", "Seat stain extraction", "Leather cream re-hydration"] }
+      { title: "Standard Diagnostics Scan", price: "Custom Quote", items: ["OBD-II scan", "Clear error codes", "Estimate printout"] },
+      { title: "Advanced Electrical Scope", price: "Custom Quote", items: ["Sensor wave checks", "Wiring harness trace", "Safety system reset"] }
     ],
     faqs: [
-      { q: "Will steam cleaning damage electronic buttons?", a: "No, we use dry-vapor steam lines and protect screen areas before cleaning." },
-      { q: "How long does it take for seats to dry?", a: "Our extractor vacuums pull 90% of moisture out, so interior seats dry within 2 hours." }
+      { q: "What does a check engine light mean?", a: "It indicates a fault in the emissions or engine control system. A scan tool is required to read the specific code." }
     ]
   },
-  "car-washing": {
-    title: "Foam Wash & Wash Care",
-    icon: Shield,
-    subtitle: "Scratch-Free pH-Neutral Snow Foam Treatment",
-    desc: "Safe hand washing, undercarriage rinse, tire dress, and interior console dusting.",
-    overview: "We offer a safe two-bucket washing process. By pre-soaking the vehicle in thick pH-neutral snow foam, we float dust off panels before washing, preventing micro-scratches.",
+  "tyre-replacement": {
+    title: "Tyre Replacement",
+    icon: Disc,
+    subtitle: "Premium Tyre Replacement & Balancing",
+    desc: "Fitting, balancing, and alignment of passenger, performance, and commercial tyres.",
+    overview: "We supply and fit a wide range of premium tyres. Our service includes tyre mounting, high-speed wheel balancing, valve replacement, and digital wheel alignment checks.",
     benefits: [
-      "Prevents micro-scratching from grit drag.",
-      "Thorough undercarriage spray to remove salt dust.",
-      "Dressed tires and clean wheel barrels."
+      "Improves road traction and braking safety.",
+      "Reduces uneven tyre wear and road noise.",
+      "Optimizes fuel efficiency through correct rolling balance."
     ],
     stages: [
-      { name: "Foam Soak", desc: "Spraying thick pH-balanced foam to dissolve road grime." },
-      { name: "Two-Bucket Wash", desc: "Gentle wash with grid-guarded buckets." },
-      { name: "Air Dry finishing", desc: "Blown air lines to dry mirror hinges and panel gaps." }
+      { name: "Tyre Stripping", desc: "Removing old tyres from rims safely using clean clamping machines." },
+      { name: "Fitting & Balancing", desc: "Mounting new tyres and applying wheel weights on spin balancers." },
+      { name: "Alignment Check", desc: "Adjusting toe and camber parameters on laser aligners." }
     ],
     pricing: [
-      { title: "Signature Wash", price: "$49", items: ["Snow foam hand wash", "Undercarriage flush", "Tire shine wipe"] },
-      { title: "Hype Wash & Wax", price: "$99", items: ["Signature wash", "Clay bar panel polish", "Spray sealant wax"] }
+      { title: "Single Tyre Mount & Balance", price: "Custom Quote", items: ["New tyre fitment", "Wheel spin balance", "Valve swap"] },
+      { title: "Full Set & Wheel Align", price: "Custom Quote", items: ["4 Tyre replacements", "4 Wheel balance", "Laser wheel alignment"] }
     ],
     faqs: [
-      { q: "Do you use automatic brush machines?", a: "Never. Automatic brush machines cause heavy swirl marks. We only perform safe hand washes." },
-      { q: "Is the undercarriage wash included?", a: "Yes, our wash packages include undercarriage pressure flushing." }
+      { q: "How often should I align my wheels?", a: "We recommend a wheel alignment check every 12 months or when fitting new tyres." }
+    ]
+  },
+  "logbook-service": {
+    title: "Logbook Service",
+    icon: BookOpen,
+    subtitle: "Warranty-Approved Scheduled Services",
+    desc: "Scheduled maintenance checks, fluid swaps, filters, and official logbook stamps.",
+    overview: "We perform scheduled servicing according to your vehicle manufacturer's guidelines. We use approved filters and lubricants to ensure your new car warranty remains fully protected.",
+    benefits: [
+      "Keeps your manufacturer warranty 100% valid.",
+      "Maintains a complete service history record.",
+      "Keeps engine components running under peak oil specs."
+    ],
+    stages: [
+      { name: "Logbook Checkpoint", desc: "Reviewing scheduled checkpoints for your vehicle age/km mark." },
+      { name: "Fluid & Filter Swap", desc: "Replacing engine oil, oil filters, cabin filters, and fluids." },
+      { name: "Logbook Stamp", desc: "Stamping your vehicle service booklet for official records." }
+    ],
+    pricing: [
+      { title: "Minor Logbook Check", price: "Custom Quote", items: ["Oil & filter change", "Safety checks scan", "Fluid level top-ups"] },
+      { title: "Major Logbook Check", price: "Custom Quote", items: ["Spark plug swap", "Brake fluid flush", "Engine diagnostics review"] }
+    ],
+    faqs: [
+      { q: "Will this service void my warranty?", a: "No. Under Australian law, certified independent workshops can perform logbook services without voiding manufacturer warranties." }
+    ]
+  },
+  "oil-change": {
+    title: "Basic Oil Change",
+    icon: Droplet,
+    subtitle: "Premium Engine Oil & Filter Change",
+    desc: "Quick synthetic oil drain, new filter replacement, and vehicle fluid checks.",
+    overview: "Keep your engine running cool and clean. We drain old oil, install a premium spin-on oil filter, fill with approved full-synthetic engine oil, and check your safety vitals.",
+    benefits: [
+      "Reduces friction wear on internal pistons and bearings.",
+      "Draws heat away from vital combustion chambers.",
+      "Prevents engine sludge buildup."
+    ],
+    stages: [
+      { name: "Sump Drain", desc: "Draining hot, contaminated oil from the engine sump block." },
+      { name: "Filter Swap", desc: "Installing a brand new high-capacity filtration element." },
+      { name: "Refill & Level", desc: "Refilling with premium synthetic oil matching factory weight specs." }
+    ],
+    pricing: [
+      { title: "Standard Oil Service", price: "Custom Quote", items: ["Up to 5L synthetic oil", "Premium oil filter", "Under-bonnet fluid check"] },
+      { title: "SUV & Diesel Service", price: "Custom Quote", items: ["Up to 8L diesel synthetic oil", "Heavy-duty filter", "Brake & safety check"] }
+    ],
+    faqs: [
+      { q: "How often should I change my engine oil?", a: "We recommend changes every 10,000 km or 6 months, whichever comes first." }
+    ]
+  },
+  "aircon-regas": {
+    title: "Aircon Regas",
+    icon: Wind,
+    subtitle: "Ice-Cold Cabin Air Conditioning Recharge",
+    desc: "A/C refrigerant vacuum testing, gas recharge, and leak diagnostics.",
+    overview: "Restore your air conditioning system's cooling power. We vacuum test your system for micro-leaks, evacuate old gas, recharge with fresh R134a or R1234yf refrigerant, and add compressor lubricant.",
+    benefits: [
+      "Restores air conditioning to ice-cold cabin temperatures.",
+      "Lubricates internal AC compressor seal gaskets.",
+      "Leak testing prevents environmental gas escape."
+    ],
+    stages: [
+      { name: "Pressure Vacuum Test", desc: "Draining air conditioning lines and holding vacuum to check for leaks." },
+      { name: "Lubricant Injection", desc: "Adding synthetic PAG compressor oils into lines." },
+      { name: "Refrigerant Charge", desc: "Weighing and charging gas matching your dash plate spec." }
+    ],
+    pricing: [
+      { title: "Standard R134a Regas", price: "Custom Quote", items: ["Vacuum pressure test", "R134a gas recharge", "Vent temp verify"] },
+      { title: "Premium R1234yf Regas", price: "Custom Quote", items: ["New model gas recharge", "Ozone sanitation", "AC cabin filter swap"] }
+    ],
+    faqs: [
+      { q: "Why is my air conditioner blowing warm air?", a: "It is usually due to low refrigerant levels caused by micro-leaks, or a compressor clutch failure. A vacuum test will identify the issue." }
     ]
   }
 };
@@ -370,7 +420,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <div>
                 <h3 className="text-sm font-bold text-white uppercase tracking-wider">Ready to Book?</h3>
                 <p className="text-[10px] text-white/40 mt-1 font-light">
-                  Get a free repair estimate and surveyor claim assist.
+                  Get a free diagnostic check or repair quotation.
                 </p>
               </div>
               <div className="grid gap-3 w-full">
@@ -380,14 +430,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 >
                   Schedule Appointment <ChevronRight className="h-4 w-4" />
                 </Link>
-                <a
-                  href="https://wa.me/61485878180"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white py-3.5 text-xs font-bold uppercase tracking-wider transition-all"
-                >
-                  <MessageSquare className="h-4 w-4 text-primary" /> WhatsApp Chat
-                </a>
               </div>
             </div>
 

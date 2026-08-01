@@ -1,16 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const servicesLinks = [
-    { name: "Car Detailing", href: "/services/car-detailing" },
     { name: "Car Painting", href: "/services/car-painting" },
-    { name: "Denting & Bodywork", href: "/services/denting" },
-    { name: "Accident Repair", href: "/services/accident-repair" },
-    { name: "Ceramic Coating", href: "/services/ceramic-coating" },
+    { name: "Denting & Panel Alignment", href: "/services/denting" },
+    { name: "Accident Restoration", href: "/services/accident-repair" },
+    { name: "Insurance Claims", href: "/services/insurance-claims" },
+    { name: "Fault Diagnosing", href: "/services/fault-diagnosing" },
+    { name: "Logbook Service", href: "/services/logbook-service" },
   ];
 
   const quickLinks = [
@@ -42,15 +43,6 @@ export default function Footer() {
               comprehensive mechanical services for all makes and models.
             </p>
             <div className="flex gap-4">
-              <a
-                href="https://wa.me/61485878180"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full border border-white/5 bg-white/5 text-white/60 hover:text-white hover:border-primary transition-all duration-300"
-                aria-label="WhatsApp"
-              >
-                <MessageSquare className="h-4 w-4" />
-              </a>
               <a
                 href="https://www.instagram.com/hypesmashrepairs?igsh=dXNtZjdzbzhiY3di"
                 target="_blank"

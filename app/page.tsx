@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { 
-  Car, Wrench, ShieldCheck, CheckCircle2, Paintbrush, 
-  Sparkles, Clock, ShieldAlert, ArrowUpRight, 
-  Phone, MessageSquare, ChevronRight, Star, ChevronLeft, Award
+  Car, Wrench, CheckCircle2, Paintbrush, 
+  Clock, ShieldAlert, ArrowUpRight, FileText, Cpu, BookOpen,
+  Phone, ChevronRight, Star, ChevronLeft, Award
 } from "lucide-react";
 
 if (typeof window !== "undefined") {
@@ -25,13 +25,6 @@ const STATS = [
 
 const SERVICES = [
   {
-    title: "Car Detailing",
-    icon: Sparkles,
-    desc: "Multi-stage paint correction, leather rejuvenation, and deep sanitization for ultimate luxury feel.",
-    href: "/services/car-detailing",
-    bg: "/service-1.png"
-  },
-  {
     title: "Car Painting",
     icon: Paintbrush,
     desc: "Glasurit computer-matched premium paint coats baked in low-dust downdraft booths.",
@@ -39,7 +32,7 @@ const SERVICES = [
     bg: "/service-2.png"
   },
   {
-    title: "Denting & Bodywork",
+    title: "Denting & Panel Alignment",
     icon: Wrench,
     desc: "Precision structural realignment and dent pulling to strict factory tolerances.",
     href: "/services/denting",
@@ -53,10 +46,24 @@ const SERVICES = [
     bg: "/service-4.png"
   },
   {
-    title: "Ceramic Coating",
-    icon: ShieldCheck,
-    desc: "Nanotechnology quartz sealing layers providing 9H hydrophobic hardness and UV block filters.",
-    href: "/services/ceramic-coating",
+    title: "Insurance Claims",
+    icon: FileText,
+    desc: "We coordinate surveyor audits, estimate reports, and handle digital filings for direct billing.",
+    href: "/services/insurance-claims",
+    bg: "/service-5.png"
+  },
+  {
+    title: "Fault Diagnosing",
+    icon: Cpu,
+    desc: "Advanced computerized scans to troubleshoot warning lights, ECU codes, and electrical issues.",
+    href: "/services/fault-diagnosing",
+    bg: "/service-1.png"
+  },
+  {
+    title: "Logbook Service",
+    icon: BookOpen,
+    desc: "Scheduled fluid swaps, filters, and safety checks stamped officially to protect your new car warranty.",
+    href: "/services/logbook-service",
     bg: "/service-6.png"
   },
 ];
@@ -564,12 +571,10 @@ export default function HomePage() {
               Book Appointment <ChevronRight className="h-4 w-4" />
             </Link>
             <a
-              href="https://wa.me/61485878180"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:0485878180"
               className="flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white px-8 py-4 text-xs font-bold uppercase tracking-wider transition-all duration-300"
             >
-              <MessageSquare className="h-4 w-4 text-primary" /> WhatsApp Workshop
+              <Phone className="h-4 w-4 text-primary" /> Call Workshop
             </a>
           </div>
         </div>

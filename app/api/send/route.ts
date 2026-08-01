@@ -9,12 +9,16 @@ export async function POST(request: Request) {
     const { name, email, phone, carModel, service, message } = await request.json();
 
     const serviceMap: Record<string, string> = {
-      "car-detailing": "Car Detailing & Compounding",
-      "car-painting": "Car Painting & Oven Bake",
+      "car-painting": "Car Painting",
       "denting": "Denting & Panel Alignment",
       "accident-repair": "Accident Restoration",
-      "ceramic-coating": "Ceramic Coating",
-      "car-washing": "Foam Washing",
+      "insurance-claims": "Insurance Claims",
+      "part-replacement": "Part Replacement",
+      "fault-diagnosing": "Fault Diagnosing",
+      "tyre-replacement": "Tyre Replacement",
+      "logbook-service": "Logbook Service",
+      "oil-change": "Basic Oil Change",
+      "aircon-regas": "Aircon Regas",
     };
 
     const humanReadableService = serviceMap[service] || service;
