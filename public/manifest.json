@@ -1,7 +1,7 @@
 {
-  "name": "Demo PWA App",
-  "short_name": "DemoPWA",
-  "description": "My Next.js PWA App",
+  "name": "Hype Mechanical & Smash Repairs",
+  "short_name": "HypeAuto",
+  "description": "Hype Mechanical & Smash Repairs PWA App",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
