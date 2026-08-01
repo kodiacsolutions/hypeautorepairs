@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 
     const humanReadableService = serviceMap[service] || service;
 
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Hype Mechanical <onboarding@resend.dev>",
       to: ["Hypeautorepairs@gmail.com"],
       subject: `New Booking Request from ${name}`,
@@ -67,6 +67,10 @@ export async function POST(request: Request) {
         </div>
       `,
     });
+
+    if (error) {
+      return NextResponse.json({ success: false, error: error.message || JSON.stringify(error) }, { status: 400 });
+    }
 
     return NextResponse.json({ success: true, data });
   } catch (error: any) {
