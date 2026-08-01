@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageSquare, Instagram } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -50,6 +50,15 @@ export default function Footer() {
                 aria-label="WhatsApp"
               >
                 <MessageSquare className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/hypesmashrepairs?igsh=dXNtZjdzbzhiY3di"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full border border-white/5 bg-white/5 text-white/60 hover:text-white hover:border-primary transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
               </a>
             </div>
           </div>
