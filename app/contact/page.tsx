@@ -13,11 +13,44 @@ export default function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API form submission
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const resData = await response.json();
+
+      if (response.ok && resData.success) {
+        setSubmitted(true);
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          carModel: "",
+          service: "car-detailing",
+          message: "",
+        });
+      } else {
+        setError(resData.error || "Something went wrong. Please try again.");
+      }
+    } catch (err: any) {
+      setError("Failed to connect to the server. Please check your network and try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -137,11 +170,21 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {error && (
+                  <div className="text-red-500 text-xs font-semibold text-center border border-red-500/20 bg-red-500/5 rounded-xl py-3 px-4">
+                    {error}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary/95 text-white py-4 text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 transition-all hover:scale-[1.01]"
+                  disabled={loading}
+                  className={`w-full flex items-center justify-center gap-2 rounded-xl text-white py-4 text-xs font-bold uppercase tracking-wider shadow-lg shadow-primary/20 transition-all hover:scale-[1.01] ${
+                    loading ? "bg-primary/50 cursor-not-allowed" : "bg-primary hover:bg-primary/95"
+                  }`}
                 >
-                  Send Booking Request <ChevronRight className="h-4 w-4" />
+                  {loading ? "Sending Request..." : "Send Booking Request"}{" "}
+                  {!loading && <ChevronRight className="h-4 w-4" />}
                 </button>
               </form>
             )}
@@ -163,7 +206,7 @@ export default function ContactPage() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-4.5 w-4.5 text-primary" />
-                  <span>info@hypemechanical.com.au</span>
+                  <span>Hypeautorepairs@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <MapPin className="h-4.5 w-4.5 text-primary" />

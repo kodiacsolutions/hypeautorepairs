@@ -137,7 +137,7 @@ export default function TermsPage() {
                 </li>
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] text-white/30 uppercase font-bold tracking-wider">Email Address</span>
-                  <span className="text-primary hover:underline">info@hypemechanical.com.au</span>
+                  <span className="text-primary hover:underline">Hypeautorepairs@gmail.com</span>
                 </li>
                 <li className="flex flex-col gap-1">
                   <span className="text-[10px] text-white/30 uppercase font-bold tracking-wider">Phone Number</span>

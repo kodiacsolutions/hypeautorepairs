@@ -110,7 +110,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-primary shrink-0" />
-                  <span>info@hypemechanical.com.au</span>
+                  <span>Hypeautorepairs@gmail.com</span>
                 </li>
               </ul>
             </div>
