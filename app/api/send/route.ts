@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Hype Mechanical <onboarding@resend.dev>",
-      to: ["Hypeautorepairs@gmail.com"],
+      to: ["hypeautorepairs@gmail.com"],
       subject: `New Booking Request from ${name}`,
       replyTo: email,
       html: `
