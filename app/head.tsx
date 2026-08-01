@@ -5,7 +5,7 @@ export default function Head() {
 
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
-      <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+      <link rel="apple-touch-icon" href="/icons/icon-512x512.png" />
     </>
   );
 }
