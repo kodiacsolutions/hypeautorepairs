@@ -2,7 +2,6 @@ import withPWA from "@ducanh2912/next-pwa";
 
 const nextConfig = {
   reactStrictMode: true,
-  output: "export",
   images: {
     unoptimized: true,
   },
