@@ -580,6 +580,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Schema.org Structured Data for Local Business SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AutoRepair",
+            "name": "Hype Mechanical & Smash Repairs",
+            "image": "https://hypeautorepairs.com.au/logo-footer.png",
+            "url": "https://hypeautorepairs.com.au",
+            "telephone": "0485 878 180",
+            "email": "Hypeautorepairs@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "5/172 Milperra Road",
+              "addressLocality": "Revesby",
+              "addressRegion": "NSW",
+              "postalCode": "2212",
+              "addressCountry": "AU"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -33.935560,
+              "longitude": 151.018260
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "09:00",
+              "closes": "19:00"
+            },
+            "sameAs": [
+              "https://www.instagram.com/hypesmashrepairs?igsh=dXNtZjdzbzhiY3di"
+            ],
+            "priceRange": "$$"
+          })
+        }}
+      />
     </div>
   );
 }

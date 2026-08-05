@@ -280,8 +280,42 @@ const SERVICES_CATALOG: Record<string, ServiceData> = {
   }
 };
 
+import { Metadata } from "next";
+
 interface PageProps {
   params: Promise<{ service: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { service } = await params;
+  const data = SERVICES_CATALOG[service];
+  
+  if (!data) {
+    return {
+      title: "Service Not Found | Hype Mechanical & Smash Repairs",
+    };
+  }
+  
+  return {
+    title: `${data.title} | Hype Mechanical & Smash Repairs Revesby`,
+    description: `${data.desc} Professional car mechanical services and smash repairs at Revesby NSW. Get a free quote today.`,
+    alternates: {
+      canonical: `https://hypeautorepairs.com.au/services/${service}`,
+    },
+    openGraph: {
+      title: `${data.title} | Hype Mechanical & Smash Repairs`,
+      description: data.desc,
+      url: `https://hypeautorepairs.com.au/services/${service}`,
+      images: [
+        {
+          url: "https://hypeautorepairs.com.au/logo-footer.png",
+          width: 800,
+          height: 600,
+          alt: data.title,
+        }
+      ]
+    }
+  };
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {
